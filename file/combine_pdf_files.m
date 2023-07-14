@@ -15,12 +15,12 @@ elseif ischar(filespec)
     files = find_files( filespec );
 end
 
-if exist(output_file,'file');
+if exist(output_file,'file')
     delete(output_file);
 end
 
 %% combine
-append_pdfs(output_file, files{:});
+mergePdfs(files, output_file);
 
 
 end
