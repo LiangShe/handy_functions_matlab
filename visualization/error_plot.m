@@ -1,4 +1,4 @@
-function error_plot(varargin) 
+function h = error_plot(varargin) 
 % error_plot(data) 
 % error_plot(x, data) 
 % error_plot(..., linespec) 
@@ -39,9 +39,13 @@ else
 end
 
 if hasx
-    errorbar(x, ave, sem, varargin{ix:end})
+    h = errorbar(x, ave, sem, varargin{ix:end});
 else
-    errorbar(ave, sem, varargin{ix:end})
+    h = errorbar(ave, sem, varargin{ix:end});
+end
+
+try 
+    h.CapSize = 8;
 end
 
 end
